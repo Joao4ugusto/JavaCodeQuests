@@ -1,12 +1,9 @@
-package br.com.alura.minhasMusicas.modelo;
+package br.com.alura.minhasmusicas.modelos;
 
-public class Musicas extends Audio {
+public class Musica extends Audio {
     private String album;
-    private String artista;
+    private String cantor;
     private String genero;
-
-    // ficará os set e get
-
 
     public String getAlbum() {
         return album;
@@ -16,12 +13,12 @@ public class Musicas extends Audio {
         this.album = album;
     }
 
-    public String getArtista() {
-        return artista;
+    public String getCantor() {
+        return cantor;
     }
 
-    public void setArtista(String artista) {
-        this.artista = artista;
+    public void setCantor(String cantor) {
+        this.cantor = cantor;
     }
 
     public String getGenero() {
@@ -33,8 +30,8 @@ public class Musicas extends Audio {
     }
 
     @Override
-    public int getClassificacao() {
-        if(this.getTotalReproducoes()){
+    public double getClassificacao() {
+        if(this.getTotalReproducoes() > 2000) {
             return 10;
         } else {
             return 7;
